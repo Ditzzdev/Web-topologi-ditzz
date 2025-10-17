@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pembelajaran Jaringan - Ditzz Dev</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: linear-gradient(135deg, rgba(255,192,203,0.5), rgba(255,255,255,0.3));
+    backdrop-filter: blur(20px);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 10px;
+    padding: 12px 15px;
+    z-index: 10;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    scroll-behavior: smooth;
+  }
+
+  header::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  header::-webkit-scrollbar-thumb {
+    background: rgba(255,192,203,0.5);
+    border-radius: 10px;
+  }
+
+  header button {
+    background: rgba(255,255,255,0.4);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-weight: 500;
+    color: #444;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  header button:hover {
+    background: rgba(255,192,203,0.7);
+    color: white;
+    transform: scale(1.05);
+  }
+
+  section {
+    display: none;
+    padding: 100px 10%;
+    min-height: 100vh;
+    color: #333;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s ease;
+  }
+
+  section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  h1 {
+    font-size: 2.3rem;
+    color: #ff6f91;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    text-align: justify;
+    color: #444;
+  }
+
+  .container {
+    background: rgba(255,255,255,0.35);
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    backdrop-filter: blur(20px);
+    margin-top: 30px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <button onclick="showSection('topologi')">Topologi</button>
+  <button onclick="showSection('arsitektur')">Arsitektur</button>
+  <button onclick="showSection('pengalamatan')">Pengalamatan</button>
+  <button onclick="showSection('subnetting')">Subnetting</button>
+  <button onclick="showSection('cidr')">CIDR</button>
+  <button onclick="showSection('vlsm')">VLSM</button>
+</header>
+
+<main>
+  <section id="topologi" class="active">
+    <div class="container">
+      <h1>Topologi Jaringan</h1>
+      <p>Topologi jaringan adalah pola atau bentuk hubungan antar komputer dalam sebuah jaringan. Tujuannya agar data bisa dikirim dan diterima dengan lancar. Jenis-jenis topologi meliputi: Star (Bintang), Bus, Ring, Mesh, Tree, Hybrid, dan Point-to-Point. Setiap jenis memiliki kelebihan dan kekurangan tergantung kebutuhan jaringan.</p>
+    </div>
+  </section>
+
+  <section id="arsitektur">
+    <div class="container">
+      <h1>Arsitektur Jaringan</h1>
+      <p>Arsitektur jaringan adalah desain keseluruhan sistem jaringan, termasuk bagaimana komputer berkomunikasi dan jenis layanan yang digunakan. Terdapat dua arsitektur utama, yaitu Client-Server (satu komputer pusat melayani client) dan Peer-to-Peer (semua komputer setara dan saling berbagi data). Pemilihannya tergantung kebutuhan dan skala jaringan.</p>
+    </div>
+  </section>
+
+  <section id="pengalamatan">
+    <div class="container">
+      <h1>Pengalamatan Jaringan</h1>
+      <p>Pengalamatan jaringan adalah cara memberi alamat unik pada setiap perangkat agar bisa saling berkomunikasi. IP Address biasanya berbentuk angka seperti 192.168.1.1. Tiap perangkat dalam jaringan harus memiliki IP unik agar tidak terjadi konflik koneksi.</p>
+    </div>
+  </section>
+
+  <section id="subnetting">
+    <div class="container">
+      <h1>Subnetting</h1>
+      <p>Subnetting adalah teknik membagi satu jaringan besar menjadi beberapa jaringan kecil (subnet). Tujuannya untuk menghemat IP address, meningkatkan keamanan, dan efisiensi jaringan. Contohnya, jaringan 192.168.1.0/24 bisa dibagi menjadi subnet /26, /27, dan sebagainya.</p>
+    </div>
+  </section>
+
+  <section id="cidr">
+    <div class="container">
+      <h1>CIDR (Classless Inter-Domain Routing)</h1>
+      <p>CIDR adalah sistem pengalamatan IP modern yang tidak bergantung pada kelas (A, B, C). CIDR menggunakan tanda “/” untuk menunjukkan jumlah bit jaringan. Contoh: 192.168.1.0/24 memiliki 256 alamat, sedangkan 192.168.1.0/26 memiliki 64 alamat. Sistem ini membuat pembagian IP lebih efisien.</p>
+    </div>
+  </section>
+
+  <section id="vlsm">
+    <div class="container">
+      <h1>VLSM (Variable Length Subnet Mask)</h1>
+      <p>VLSM adalah teknik lanjutan dari subnetting yang membagi jaringan dengan ukuran subnet berbeda-beda sesuai kebutuhan. Misalnya, bagian A membutuhkan 50 host (pakai /26), sedangkan bagian B hanya 10 host (pakai /28). Dengan VLSM, IP Address bisa digunakan dengan lebih efisien tanpa terbuang sia-sia.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2025 Ditzz Dev | Web Edukasi Jaringan
+</footer>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll("section").forEach(sec => {
+    sec.classList.remove("active");
+  });
+  document.getElementById(id).classList.add("active");
+}
+</script>
+
+</body>
+</html>
